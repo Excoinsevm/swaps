@@ -33,7 +33,7 @@
   "homepage": "https://ben-haslam.github.io/Alternative-Uniswap-Interface/",
   "scripts": {
     "postinstall": "patch-package",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "react-scripts start",
     "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
