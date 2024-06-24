@@ -38,7 +38,7 @@
   "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
   "test": "react-scripts test",
   "eject": "react-scripts eject"
-}
+},
     "resolutions": {
       "postcss-safe-parser/postcss": "^8.3.11"
     },
