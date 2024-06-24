@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Alternative-Uniswap-Interface/static/css/main.797d0e06.chunk.css",
-    "main.js": "/Alternative-Uniswap-Interface/static/js/main.56bb2334.chunk.js",
-    "main.js.map": "/Alternative-Uniswap-Interface/static/js/main.56bb2334.chunk.js.map",
-    "runtime-main.js": "/Alternative-Uniswap-Interface/static/js/runtime-main.58b3a28f.js",
-    "runtime-main.js.map": "/Alternative-Uniswap-Interface/static/js/runtime-main.58b3a28f.js.map",
-    "static/css/2.4b174fbe.chunk.css": "/Alternative-Uniswap-Interface/static/css/2.4b174fbe.chunk.css",
-    "static/js/2.50d87959.chunk.js": "/Alternative-Uniswap-Interface/static/js/2.50d87959.chunk.js",
-    "static/js/2.50d87959.chunk.js.map": "/Alternative-Uniswap-Interface/static/js/2.50d87959.chunk.js.map",
-    "static/js/3.9f9e469e.chunk.js": "/Alternative-Uniswap-Interface/static/js/3.9f9e469e.chunk.js",
-    "static/js/3.9f9e469e.chunk.js.map": "/Alternative-Uniswap-Interface/static/js/3.9f9e469e.chunk.js.map",
-    "index.html": "/Alternative-Uniswap-Interface/index.html",
-    "static/css/2.4b174fbe.chunk.css.map": "/Alternative-Uniswap-Interface/static/css/2.4b174fbe.chunk.css.map",
-    "static/css/main.797d0e06.chunk.css.map": "/Alternative-Uniswap-Interface/static/css/main.797d0e06.chunk.css.map",
-    "static/js/2.50d87959.chunk.js.LICENSE.txt": "/Alternative-Uniswap-Interface/static/js/2.50d87959.chunk.js.LICENSE.txt"
+    "main.css": "/swaps/static/css/main.797d0e06.chunk.css",
+    "main.js": "/swaps/static/js/main.56bb2334.chunk.js",
+    "main.js.map": "/swaps/static/js/main.56bb2334.chunk.js.map",
+    "runtime-main.js": "/swaps/static/js/runtime-main.58b3a28f.js",
+    "runtime-main.js.map": "/swaps/static/js/runtime-main.58b3a28f.js.map",
+    "static/css/2.4b174fbe.chunk.css": "/swaps/static/css/2.4b174fbe.chunk.css",
+    "static/js/2.50d87959.chunk.js": "/swaps/static/js/2.50d87959.chunk.js",
+    "static/js/2.50d87959.chunk.js.map": "/swaps/static/js/2.50d87959.chunk.js.map",
+    "static/js/3.9f9e469e.chunk.js": "/swaps/static/js/3.9f9e469e.chunk.js",
+    "static/js/3.9f9e469e.chunk.js.map": "/swaps/static/js/3.9f9e469e.chunk.js.map",
+    "index.html": "/swaps/index.html",
+    "static/css/2.4b174fbe.chunk.css.map": "/swaps/static/css/2.4b174fbe.chunk.css.map",
+    "static/css/main.797d0e06.chunk.css.map": "/swaps/static/css/main.797d0e06.chunk.css.map",
+    "static/js/2.50d87959.chunk.js.LICENSE.txt": "/swaps/static/js/2.50d87959.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.58b3a28f.js",
