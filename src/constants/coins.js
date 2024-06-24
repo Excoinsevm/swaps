@@ -1,7 +1,5 @@
 import * as chains from './chains';
 
-// If you add coins for a new network, make sure Weth address (for the router you are using) is the first entry
-
 const MAINNETCoins = [
   {
     name: "Bitrock",
