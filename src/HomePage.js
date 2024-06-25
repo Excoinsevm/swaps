@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Typography, makeStyles } from '@material-ui/core';
-import LogoImage from './logo.png'; // Replace with your actual logo image file
 
 const useStyles = makeStyles((theme) => ({
   container: {
