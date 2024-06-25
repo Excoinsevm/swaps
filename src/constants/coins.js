@@ -8,9 +8,9 @@ const MAINNETCoins = [
     logoUrl: "https://example.com/bitrock-logo.png", // Replace with actual logo URL
   },
   {
-    name: "PopCatRock",
-    abbr: "POPCAT",
-    address: "0xdce5726e3bc8e1f574416978279bb0ae62ab3c15",
+    name: "PopSwap",
+    abbr: "PSWAP",
+    address: "0xCf65EFCebdfDd91a16F0211d1A194EB6bDB50a0E",
     logoUrl: "https://i.imgur.com/qWwaaY9.jpeg", // Replace with actual logo URL
   },
 ]
