@@ -31,7 +31,7 @@ const App = () => {
             render={(network) => (
               <div>
                 <NarBar />
-                <Route exact path="swap">
+                <Route exact path="/swap/">
                   <CoinSwapper network={network} />
                 </Route>
 
