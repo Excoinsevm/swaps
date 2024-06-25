@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { Contract, ethers } from "ethers";
-import { createTheme, ThemeProvider } from "@material-ui/core";
-import { SnackbarProvider } from "notistack";
+import { ethers } from "ethers";
+import { createTheme } from "@material-ui/core";
 import ConnectWalletPage from "./Components/connectWalletPage";
 import {
   getAccount,
@@ -11,7 +10,7 @@ import {
   getWeth,
 } from "./ethereumFunctions";
 import COINS from "./constants/coins";
-import * as chains from "./constants/chains";
+import { network as chain, routerAddress } from "./constants/chains";
 
 const theme = createTheme({
   palette: {
@@ -29,76 +28,64 @@ const theme = createTheme({
 const autoReconnectDelay = 5000;
 
 const Web3Provider = (props) => {
-  const [isConnected, setConnected] = useState(true);
-  let network = Object.create( {} )
-  network.provider = useRef(null);
-  network.signer = useRef(null);
-  network.account = useRef(null);
-  network.coins = [];
-  network.chainID = useRef(null);
-  network.router = useRef(null);
-  network.factory = useRef(null);
-  network.weth = useRef(null);
+  const [isConnected, setConnected] = useState(false);
+  const network = useRef({
+    provider: null,
+    signer: null,
+    account: null,
+    coins: [],
+    chainID: null,
+    router: null,
+    factory: null,
+    weth: null,
+  });
   const backgroundListener = useRef(null);
+
   async function setupConnection() {
     try {
-      console.log('lets go!');
-      network.provider = new ethers.providers.Web3Provider(window.ethereum);
-      network.signer = await network.provider.getSigner();
-      await getAccount().then(async (result) => {
-        network.account = result;
-      });
+      console.log('Setting up connection...');
+      network.current.provider = new ethers.providers.Web3Provider(window.ethereum);
+      network.current.signer = await network.current.provider.getSigner();
+      network.current.account = await getAccount();
+      network.current.chainID = chain.id;
 
-      await getNetwork(network.provider).then(async (chainId) => {
-        // Set chainID
-        network.chainID = chainId;
-        if (chains.networks.includes(chainId)) {
-          // Get the router using the chainID
-          network.router = await getRouter(
-            chains.routerAddress.get(chainId),
-            network.signer
-          );
-          // Get default coins for network
-          network.coins = COINS.get(chainId);
-          // Get Weth address from router
-          await network.router.WETH().then((wethAddress) => {
-            network.weth = getWeth(wethAddress, network.signer);
-            // Set the value of the weth address in the default coins array
-            network.coins[0].address = wethAddress;
-          });
-          // Get the factory address from the router
-          await network.router.factory().then((factory_address) => {
-            network.factory = getFactory(
-              factory_address,
-              network.signer
-            );
-          });
-          setConnected(true);
-        } else {
-          console.log("Wrong network mate.");
-          setConnected(false);
-        }
-      });
+      // Ensure we're on the correct network
+      const { chainId } = await network.current.provider.getNetwork();
+      if (chainId !== chain.id) {
+        console.log("Wrong network mate.");
+        setConnected(false);
+        return;
+      }
 
+      // Set up router
+      network.current.router = await getRouter(routerAddress, network.current.signer);
+
+      // Get default coins for network
+      network.current.coins = COINS.get(chain.id);
+
+      // Get Weth address from router
+      const wethAddress = await network.current.router.WETH();
+      network.current.weth = getWeth(wethAddress, network.current.signer);
+      network.current.coins[0].address = wethAddress;
+
+      // Get the factory address from the router
+      const factoryAddress = await network.current.router.factory();
+      network.current.factory = getFactory(factoryAddress, network.current.signer);
+
+      setConnected(true);
     } catch (e) {
       console.log(e);
+      setConnected(false);
     }
   }
 
   async function createListener() {
     return setInterval(async () => {
-      // console.log("Heartbeat");
       try {
-        // Check the account has not changed
         const account = await getAccount();
-        if (account != network.account) {
+        if (account !== network.current.account) {
           await setupConnection();
         }
-        // const chainID = await getNetwork(network.provider);
-        // if (chainID !== network.chainID){
-        //   setConnected(false);
-        //   await setupConnection();
-        // }
       } catch (e) {
         setConnected(false);
         await setupConnection();
@@ -106,28 +93,27 @@ const Web3Provider = (props) => {
     }, 1000);
   }
 
-  useEffect(async () => {
-    // Initial setup
-    console.log("Initial hook");
-    await setupConnection();
-    console.log("network: ", network);
+  useEffect(() => {
+    const initialize = async () => {
+      console.log("Initial hook");
+      await setupConnection();
+      console.log("network: ", network.current);
 
-    // Start background listener
-    if (backgroundListener.current != null) {
-      clearInterval(backgroundListener.current);
-    }
-    const listener = createListener();
-    backgroundListener.current = listener;
+      if (backgroundListener.current != null) {
+        clearInterval(backgroundListener.current);
+      }
+      backgroundListener.current = createListener();
+    };
+    initialize();
+
     return () => clearInterval(backgroundListener.current);
   }, []);
 
   const renderNotConnected = () => {
-    console.log("Rendering");
+    console.log("Rendering not connected");
     return (
       <div className="App">
-        <div>
-          <ConnectWalletPage />
-        </div>
+        <ConnectWalletPage />
       </div>
     );
   };
@@ -135,7 +121,7 @@ const Web3Provider = (props) => {
   return (
     <>
       {!isConnected && renderNotConnected()}
-      {isConnected && <div> {props.render(network)}</div>}
+      {isConnected && <div>{props.render(network.current)}</div>}
     </>
   );
 };
