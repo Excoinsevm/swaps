@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
     opacity: 0.6,
   },
   coinLogo: {
-    width: 24, // Adjust size as needed
-    height: 24, // Adjust size as needed
+    width: 500px, // Adjust size as needed
+    height: 500px, // Adjust size as needed
     marginRight: theme.spacing(1), // Add spacing between logo and text
     borderRadius: "50%", // Ensure the logo is circular
   },
