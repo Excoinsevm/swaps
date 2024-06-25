@@ -8,19 +8,34 @@ import { Route, Switch } from "react-router-dom"; // Added Switch
 import { SnackbarProvider } from "notistack";
 import Liquidity from "./Liquidity/Liquidity";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles"; // Corrected import
-import { Box, Typography, makeStyles } from "@material-ui/core";
+import { Box, Typography, makeStyles, Button, Grid } from "@material-ui/core";
+import Logo from "./logo.svg"; // Replace with your logo file
 
 // Create styles using makeStyles
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    minHeight: "80vh",
-    flexDirection: "column",
+    minHeight: "100vh",
     padding: theme.spacing(3),
   },
-  box: {
+  logo: {
+    marginBottom: theme.spacing(3),
+    width: 150,
+    height: 150,
+  },
+  buttonContainer: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  button: {
+    margin: theme.spacing(1),
+    padding: theme.spacing(1, 4),
+    fontSize: "1rem",
+  },
+  boxContainer: {
     width: "100%",
     maxWidth: 600,
     padding: theme.spacing(3),
@@ -32,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginBottom: theme.spacing(2),
+    fontSize: "1.5rem", // Smaller title text
     color: theme.palette.primary.main,
   },
   description: {
@@ -64,7 +80,32 @@ const App = () => {
               <div>
                 <NavBar />
                 <Box className={classes.container}>
-                  <Box className={classes.box}>
+                  <img src={Logo} alt="Logo" className={classes.logo} />
+                  <Grid container justify="center" className={classes.buttonContainer}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      className={classes.button}
+                      component="a"
+                      href="https://t.me/yourtelegramlink"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Telegram
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      className={classes.button}
+                      component="a"
+                      href="https://twitter.com/yourtwitterhandle"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Twitter
+                    </Button>
+                  </Grid>
+                  <Box className={classes.boxContainer}>
                     <Typography variant="h4" className={classes.title}>
                       What is a Decentralized Exchange (DEX)?
                     </Typography>
@@ -75,7 +116,7 @@ const App = () => {
                       using smart contracts.
                     </Typography>
                   </Box>
-                  <Box className={classes.box}>
+                  <Box className={classes.boxContainer}>
                     <Typography variant="h4" className={classes.title}>
                       PopSwap brought to you by PopCatDev
                     </Typography>
