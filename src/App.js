@@ -86,22 +86,22 @@ const App = () => {
                       color="primary"
                       className={classes.button}
                       component="a"
-                      href="https://t.me/yourtelegramlink"
+                      href="#"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Telegram
+                      Earn soon
                     </Button>
                     <Button
                       variant="contained"
                       color="secondary"
                       className={classes.button}
                       component="a"
-                      href="https://twitter.com/yourtwitterhandle"
+                      href="/swap"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Twitter
+                      Trade
                     </Button>
                   </Grid>
                   <Box className={classes.boxContainer}>
@@ -117,12 +117,12 @@ const App = () => {
                   </Box>
                   <Box className={classes.boxContainer}>
                     <Typography variant="h4" className={classes.title}>
-                      PopSwap brought to you by PopCatDev
+                      Whar is PopSwap?
                     </Typography>
                     <Typography variant="body1" className={classes.description}>
                       PopSwap is a decentralized application (DApp) built by
                       PopCatDev. It enables users to swap cryptocurrencies
-                      securely and efficiently on the Ethereum blockchain.
+                      and efficiently on the Bitrock blockchain.
                     </Typography>
                   </Box>
                 </Box>
