@@ -11,7 +11,7 @@ const MAINNETCoins = [
     name: "PopCatRock",
     abbr: "POPCAT",
     address: "0xdce5726e3bc8e1f574416978279bb0ae62ab3c15",
-    logoUrl: "https://example.com/popcatrock-logo.png", // Replace with actual logo URL
+    logoUrl: "https://popcatrock.xyz/assets/popcatr.png", // Replace with actual logo URL
   },
   {
     name: "PopTest5",
