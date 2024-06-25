@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography, makeStyles } from '@material-ui/core';
+import LogoImage from './logo.png'; // Replace with your actual logo image file
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -9,30 +10,22 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     minHeight: '100vh',
     padding: theme.spacing(3),
-    backgroundImage: `https://popcatrock.xyz/assets/popcatr.png`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
     position: 'relative',
-    color: theme.palette.common.white,
     textAlign: 'center',
   },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Overlay to make text readable
+  logo: {
+    width: 150, // Adjust size as needed
+    marginBottom: theme.spacing(2),
   },
   title: {
-    marginBottom: theme.spacing(2),
-    fontSize: '3rem', // Larger title
+    fontSize: '3rem',
     fontWeight: 'bold',
+    marginBottom: theme.spacing(2),
   },
   description: {
-    fontSize: '1.5rem', // Larger description
+    fontSize: '1.5rem',
     maxWidth: 600,
-    margin: '0 auto', // Center the description text
+    margin: '0 auto',
   },
 }));
 
@@ -41,12 +34,12 @@ const HomePage = () => {
 
   return (
     <Box className={classes.container}>
-      <div className={classes.overlay}></div>
+      <img src="https://popcatrock.xyz/assets/popcatr.png" alt="Logo" className={classes.logo} />
       <Typography variant="h1" className={classes.title}>
-        Welcome to React Uniswap
+        Welcome to PopSwap
       </Typography>
       <Typography variant="body1" className={classes.description}>
-        React Uniswap is a decentralized exchange platform built with React and Ethereum.
+        PopSwap is a decentralized exchange platform built with React and Bitrock.
         Swap cryptocurrencies securely and efficiently.
       </Typography>
       {/* Add more content or components as needed */}
