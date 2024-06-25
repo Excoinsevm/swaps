@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Typography, makeStyles } from '@material-ui/core';
+import { Box, Typography, makeStyles, Link } from '@material-ui/core';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import TelegramIcon from '@material-ui/icons/Telegram';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -11,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     position: 'relative',
     textAlign: 'center',
+    paddingTop: theme.spacing(8), // Adjust spacing from top
   },
   logo: {
     width: 150, // Adjust size as needed
@@ -25,6 +28,22 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.5rem',
     maxWidth: 600,
     margin: '0 auto',
+    marginBottom: theme.spacing(4), // Add extra margin bottom
+  },
+  footer: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    backgroundColor: '#f0f0f0',
+    padding: theme.spacing(2),
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  icon: {
+    fontSize: '2rem',
+    margin: theme.spacing(0, 1),
+    color: '#333', // Adjust icon color
   },
 }));
 
@@ -41,7 +60,15 @@ const HomePage = () => {
         PopSwap is a decentralized exchange platform built with React and Bitrock.
         Swap cryptocurrencies securely and efficiently.
       </Typography>
-      {/* Add more content or components as needed */}
+
+      <Box className={classes.footer}>
+        <Link href="https://twitter.com/example" target="_blank" rel="noopener noreferrer">
+          <TwitterIcon className={classes.icon} />
+        </Link>
+        <Link href="https://telegram.me/example" target="_blank" rel="noopener noreferrer">
+          <TelegramIcon className={classes.icon} />
+        </Link>
+      </Box>
     </Box>
   );
 };
