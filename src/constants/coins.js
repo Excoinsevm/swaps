@@ -1,5 +1,5 @@
 import * as chains from './chains';
-import '../CoinLogos/popcat.png';
+import './CoinLogos/popcat.png';
 
 const MAINNETCoins = [
  {
