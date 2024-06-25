@@ -51,6 +51,7 @@ CoinField.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   activeField: PropTypes.bool.isRequired,
+  logoUrl: PropTypes.string, // New prop type
 };
 
 export function RemoveLiquidityField1(props) {
@@ -62,7 +63,7 @@ export function RemoveLiquidityField1(props) {
   //      activeField - boolean - Whether text can be entered into this field or not
 
   const classes = useStyles();
-  const { onClick, symbol, value, onChange, activeField } = props;
+  const { onClick, symbol, value, onChange, activeField, logoUrl } = props;
   return (
     <div className={classes.container_blank}>
       <Grid
@@ -80,6 +81,7 @@ export function RemoveLiquidityField1(props) {
             onClick={onClick}
             className={classes.fab}
           >
+            {logoUrl && <img src={logoUrl} alt={`${symbol} Logo`} className={classes.logo} />}
             {symbol}
             <ExpandMoreIcon />
           </Fab>
@@ -112,7 +114,7 @@ export function RemoveLiquidityField2(props) {
   //      activeField - boolean - Whether text can be entered into this field or not
 
   const classes = useStyles();
-  const { onClick, symbol } = props;
+  const { onClick, symbol, logoUrl } = props;
 
   return (
     <div className={classes.container_blank}>
@@ -131,6 +133,7 @@ export function RemoveLiquidityField2(props) {
             onClick={onClick}
             className={classes.fab}
           >
+            {logoUrl && <img src={logoUrl} alt={`${symbol} Logo`} className={classes.logo} />}
             {symbol}
             <ExpandMoreIcon />
           </Fab>
@@ -149,7 +152,7 @@ export default function CoinField(props) {
   //      activeField - boolean - Whether text can be entered into this field or not
 
   const classes = useStyles();
-  const { onClick, symbol, value, onChange, activeField } = props;
+  const { onClick, symbol, value, onChange, activeField, logoUrl } = props;
 
   return (
     <div className={classes.container}>
@@ -168,6 +171,7 @@ export default function CoinField(props) {
             onClick={onClick}
             className={classes.fab}
           >
+            {logoUrl && <img src={logoUrl} alt={`${symbol} Logo`} className={classes.logo} />}
             {symbol}
             <ExpandMoreIcon />
           </Fab>
