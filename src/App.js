@@ -9,7 +9,6 @@ import { SnackbarProvider } from "notistack";
 import Liquidity from "./Liquidity/Liquidity";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles"; // Corrected import
 import { Box, Typography, makeStyles, Button, Grid } from "@material-ui/core";
-import Logo from "./logo.svg"; // Replace with your logo file
 
 // Create styles using makeStyles
 const useStyles = makeStyles((theme) => ({
@@ -80,7 +79,7 @@ const App = () => {
               <div>
                 <NavBar />
                 <Box className={classes.container}>
-                  <img src={Logo} alt="Logo" className={classes.logo} />
+                  <img src="https://popcatrock.xyz/assets/popcatr.png" alt="Logo" className={classes.logo} />
                   <Grid container justify="center" className={classes.buttonContainer}>
                     <Button
                       variant="contained"
