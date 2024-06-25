@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Typography, makeStyles } from '@material-ui/core';
-import HeroImage from './hero-image.jpg'; // Replace with your actual image file
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -10,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     minHeight: '100vh',
     padding: theme.spacing(3),
-    backgroundImage: `url(${HeroImage})`,
+    backgroundImage: `https://popcatrock.xyz/assets/popcatr.png`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     position: 'relative',
