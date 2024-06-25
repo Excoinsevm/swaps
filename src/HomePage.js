@@ -35,16 +35,28 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-around',
     marginTop: theme.spacing(4),
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
   },
   square: {
-    width: 250,
-    height: 150,
-    padding: theme.spacing(2),
+    width: 300,
+    minHeight: 200,
+    padding: theme.spacing(3),
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#f0f0f0',
+    borderRadius: theme.spacing(1),
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    transition: 'transform 0.3s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
+    marginBottom: theme.spacing(3),
   },
   subtitle: {
     fontSize: '1.2rem',
@@ -88,18 +100,18 @@ const HomePage = () => {
       <Box className={classes.squareContainer}>
         <Paper elevation={3} className={classes.square}>
           <Typography variant="h5" className={classes.subtitle}>
-            Subtitle 1
+            Our Mission
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
-            This is the description for the first square.
+            Empower users to trade cryptocurrencies with ease and security.
           </Typography>
         </Paper>
         <Paper elevation={3} className={classes.square}>
           <Typography variant="h5" className={classes.subtitle}>
-            Subtitle 2
+            Vision
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
-            This is the description for the second square.
+            Become the leading decentralized exchange platform globally.
           </Typography>
         </Paper>
       </Box>
