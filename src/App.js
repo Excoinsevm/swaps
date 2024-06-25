@@ -13,15 +13,28 @@ import { Box, Typography, makeStyles } from "@material-ui/core";
 // Create styles using makeStyles
 const useStyles = makeStyles((theme) => ({
   container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "80vh",
+    flexDirection: "column",
     padding: theme.spacing(3),
+  },
+  box: {
+    width: "100%",
+    maxWidth: 600,
+    padding: theme.spacing(3),
+    marginBottom: theme.spacing(3),
     textAlign: "center",
+    boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+    borderRadius: 8,
+    backgroundColor: "#ffffff",
   },
   title: {
     marginBottom: theme.spacing(2),
     color: theme.palette.primary.main,
   },
   description: {
-    marginBottom: theme.spacing(4),
     color: theme.palette.secondary.main,
   },
 }));
@@ -51,15 +64,27 @@ const App = () => {
               <div>
                 <NavBar />
                 <Box className={classes.container}>
-                  <Typography variant="h4" className={classes.title}>
-                    Welcome to SwapDApp
-                  </Typography>
-                  <Typography variant="body1" className={classes.description}>
-                    SwapDApp is a decentralized application that allows users to
-                    exchange one cryptocurrency for another directly from their
-                    wallets. Enjoy seamless and secure swaps without the need for
-                    intermediaries.
-                  </Typography>
+                  <Box className={classes.box}>
+                    <Typography variant="h4" className={classes.title}>
+                      What is a Decentralized Exchange (DEX)?
+                    </Typography>
+                    <Typography variant="body1" className={classes.description}>
+                      A decentralized exchange (DEX) is a cryptocurrency exchange
+                      that operates without a central authority or intermediary.
+                      Users can trade cryptocurrencies directly with each other
+                      using smart contracts.
+                    </Typography>
+                  </Box>
+                  <Box className={classes.box}>
+                    <Typography variant="h4" className={classes.title}>
+                      PopSwap brought to you by PopCatDev
+                    </Typography>
+                    <Typography variant="body1" className={classes.description}>
+                      PopSwap is a decentralized application (DApp) built by
+                      PopCatDev. It enables users to swap cryptocurrencies
+                      securely and efficiently on the Ethereum blockchain.
+                    </Typography>
+                  </Box>
                 </Box>
                 <Switch>
                   <Route exact path="/swap/">
