@@ -12,14 +12,9 @@ const MAINNETCoins = [
     address: "0xdce5726e3bc8e1f574416978279bb0ae62ab3c15",
   },
   {
-    name: "PopTest",
-    abbr: "PTEST",
-    address: "0xF2C2f088bfd4f2c8067CAB8f0Dd0E1ebD3acf065",
-  },
-  {
-    name: "PopTest",
-    abbr: "2TEST",
-    address: "0x46eF73b317Dc0413b18FCE4373a5a29786672D26",
+    name: "Pop Bitrock",
+    abbr: "PBROCK",
+    address: "0x26eC84F702Ed08b7f2c77fF0806b53A647253666",
   },
 ]
 
