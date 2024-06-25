@@ -1,34 +1,9 @@
-/* NavBar.css */
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  background-color: #333;
-  padding: 0 20px;
-}
-
 .Title {
-  display: flex;
-  align-items: center;
   background: #f4f4f4;
   height: 50px;
   text-align: left;
   margin-left: 25%;
   font-size: 1rem;
-}
-
-.navbar-logo-image {
-  height: 40px; /* Adjust as needed */
-  margin-right: 10px; /* Adjust spacing as needed */
-}
-
-.navbar-logo {
-  color: rgb(226, 23, 23);
-  justify-self: start;
-  margin-left: 0px;
-  cursor: pointer;
 }
 
 .NavbarItems {
@@ -41,6 +16,13 @@ nav {
   width: 75%;
   text-align: left;
   margin-left: 25%;
+}
+
+.navbar-logo {
+  color: rgb(226, 23, 23);
+  justify-self: start;
+  margin-left: 0px;
+  cursor: pointer;
 }
 
 .logo {
@@ -77,30 +59,4 @@ nav {
   text-decoration: none;
   border-radius: 4px;
   transition: all 0.2s ease-out;
-}
-
-.menu-icon {
-  display: none;
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.nav-menu.active {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-}
-
-@media screen and (max-width: 960px) {
-  .nav-menu {
-    display: none;
-  }
-  .menu-icon {
-    display: block;
-  }
 }
