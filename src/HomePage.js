@@ -1,7 +1,6 @@
-// 
-
 import React from 'react';
 import { Box, Typography, makeStyles } from '@material-ui/core';
+import HeroImage from './hero-image.jpg'; // Replace with your actual image file
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -11,14 +10,30 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     minHeight: '100vh',
     padding: theme.spacing(3),
+    backgroundImage: `url(${HeroImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    position: 'relative',
+    color: theme.palette.common.white,
+    textAlign: 'center',
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Overlay to make text readable
   },
   title: {
     marginBottom: theme.spacing(2),
-    fontSize: '2rem',
-    color: theme.palette.primary.main,
+    fontSize: '3rem', // Larger title
+    fontWeight: 'bold',
   },
   description: {
-    color: theme.palette.secondary.main,
+    fontSize: '1.5rem', // Larger description
+    maxWidth: 600,
+    margin: '0 auto', // Center the description text
   },
 }));
 
@@ -27,6 +42,7 @@ const HomePage = () => {
 
   return (
     <Box className={classes.container}>
+      <div className={classes.overlay}></div>
       <Typography variant="h1" className={classes.title}>
         Welcome to React Uniswap
       </Typography>
