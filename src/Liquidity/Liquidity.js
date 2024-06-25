@@ -63,8 +63,8 @@ function Liquidity(props) {
         alignItems="flex-end"
       >
         <p>
-          Alternative Uniswap Interface | Get AUT for use in the bakerloo testnet{" "}
-          <a href="https://faucet.bakerloo.autonity.network/">here</a>
+          PopSwap by PopCatRock | Join our community{" "}
+          <a href="https://t.me/PopCatRock">here</a>
         </p>
       </Grid>
     </div>
