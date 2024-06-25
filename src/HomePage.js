@@ -111,7 +111,7 @@ const HomePage = () => {
             Vision
           </Typography>
           <Typography variant="body2" className={classes.paragraph}>
-            Become the leading decentralized exchange platform on Bitrock.
+            Become the leading decentralized exchange on Bitrock.
           </Typography>
         </Paper>
       </Box>
