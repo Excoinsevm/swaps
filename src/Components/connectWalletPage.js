@@ -49,7 +49,7 @@ function ConnectWalletPage() {
     <div>
       <div className="Title">
         <h1 className="navbar-logo">
-          Alternative Uniswap Interface
+          PopSwap
         </h1>
       </div>
 
@@ -60,8 +60,7 @@ function ConnectWalletPage() {
             className={classes.title}
             color="common.white"
           >
-            Please connect an Ethereum wallet to your browser to use the
-            application
+            Please switch to Bitrock in order to use the application
           </Typography>
         </Paper>
       </Container>
@@ -74,8 +73,8 @@ function ConnectWalletPage() {
         alignItems="flex-end"
       >
         <p>
-          Alternative Uniswap Interface | Get AUT for use in the bakerloo testnet{" "}
-          <a href="https://faucet.bakerloo.autonity.network/">here</a>
+          PopSwap by PopCatRock | Join our community{" "}
+          <a href="https://t.me/PopCatRock">here</a>
         </p>
       </Grid>
     </div>
