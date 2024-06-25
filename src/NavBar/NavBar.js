@@ -14,7 +14,7 @@ const NavBar = () => {
     <nav>
       <div className="Title">
         <h1 className="navbar-logo">
-          Alternative Uniswap Interface
+          PopSwap
         </h1>
       </div>
 
