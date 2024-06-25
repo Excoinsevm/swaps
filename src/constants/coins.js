@@ -1,4 +1,5 @@
 import * as chains from './chains';
+import popcatLogo from '../CoinLogos/popcat.png';
 
 const MAINNETCoins = [
  {
@@ -11,7 +12,7 @@ const MAINNETCoins = [
     name: "PopCatRock",
     abbr: "POPCAT",
     address: "0xdce5726e3bc8e1f574416978279bb0ae62ab3c15",
-    logoUrl: "https://i.imgur.com/LgTZb4G.png", // Replace with actual logo URL
+    logoUrl: popcatLogo, // Replace with actual logo URL
   },
   {
     name: "PopTest5",
