@@ -438,7 +438,7 @@ function LiquidityDeployer(props) {
           <Grid container direction="row" justifyContent="center">
             <Grid item xs={6}>
               <Typography variant="body1" className={classes.balance}>
-                {formatReserve(liquidityTokens, "UNI-V2")}
+                {formatReserve(liquidityTokens, "POP-V2")}
               </Typography>
             </Grid>
           </Grid>
@@ -475,7 +475,7 @@ function LiquidityDeployer(props) {
             <Grid container direction="row" justifyContent="center">
               <Grid item xs={6}>
                 <Typography variant="body1" className={classes.balance}>
-                  {formatReserve(liquidityOut[2], "UNI-V2")}
+                  {formatReserve(liquidityOut[2], "POP-V2")}
                 </Typography>
               </Grid>
             </Grid>
