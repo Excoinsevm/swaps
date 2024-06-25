@@ -78,11 +78,13 @@ function CoinSwapper(props) {
     address: undefined,
     symbol: undefined,
     balance: undefined,
+    logoUrl: undefined, // Add logoUrl to state
   });
   const [coin2, setCoin2] = React.useState({
     address: undefined,
     symbol: undefined,
     balance: undefined,
+    logoUrl: undefined, // Add logoUrl to state
   });
 
   // Stores the current reserves in the liquidity pool between coin1 and coin2
@@ -157,6 +159,7 @@ function CoinSwapper(props) {
           address: address,
           symbol: data.symbol,
           balance: data.balance,
+          logoUrl: data.logoUrl, // Set logoUrl
         });
       });
     }
@@ -179,6 +182,7 @@ function CoinSwapper(props) {
           address: address,
           symbol: data.symbol,
           balance: data.balance,
+          logoUrl: data.logoUrl, // Set logoUrl
         });
       });
     }
@@ -343,6 +347,7 @@ function CoinSwapper(props) {
                 onClick={() => setDialog1Open(true)}
                 onChange={handleChange.field1}
                 symbol={coin1.symbol !== undefined ? coin1.symbol : "Select"}
+                logoUrl={coin1.logoUrl} // Pass logoUrl
               />
             </Grid>
 
@@ -356,6 +361,7 @@ function CoinSwapper(props) {
                 value={field2Value}
                 onClick={() => setDialog2Open(true)}
                 symbol={coin2.symbol !== undefined ? coin2.symbol : "Select"}
+                logoUrl={coin2.logoUrl} // Pass logoUrl
               />
             </Grid>
 
