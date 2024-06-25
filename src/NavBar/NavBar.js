@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <nav>
       <div className="Title">
-        <img src="https://popcatrock.xyz/assets/popcatr.png" alt="Logo" className="navbar-logo-image" />
+        <img src="https://popcatrock.xyz/assets/popcatr.png" alt="Logo" className="navbar-logo" />
         <h1 className="navbar-logo">
           Alternative Uniswap Interface
         </h1>
